@@ -1,0 +1,33 @@
+.tasks-container input{
+    /* border: 1px solid red; */
+    /* flex-grow: 1; */
+    margin-right: 10px;
+    font-size: 1rem;
+    font-family: 'Candal', sans-serif;
+    padding: 3px;
+    width: 75%;
+}
+
+.tasks-container button{
+    /* background-color: green; */
+    background-color: rgb(51, 212, 100);
+    border: none;
+    border-radius: 6px;
+    padding: 5px;
+    font-family: 'Candal', sans-serif;
+    color: white;
+    cursor: pointer;
+}
+
+#cancelbtn{
+    background-color: red;
+    font-family: 'Candal', sans-serif;
+    padding: 5px;
+    border-radius: 6px;   
+    margin-left: 5px;
+}
+
+#cancelbtn a{
+    color: white;
+    text-decoration: none;
+}

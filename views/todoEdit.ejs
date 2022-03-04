@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://use.fontawesome.com/e4337e4185.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        ToDo List
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Candal&family=Lobster&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="/css/todoStyles.css">    
+    <link rel="stylesheet" href="/css/todoEditStyles.css">
+
+    <link rel="stylesheet" href="/css/fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/all.min.css">
+</head>
+<body>
+
+        <div class="todaysDate">
+            <%= todaysDate %>
+        </div>
+    <div class="todo-container">
+        <h2 id="heading">ToDo List</h2>
+
+        <div class="todo">
+
+            <form action="/addTask" method="post" id="form-div">    
+                <input type="text" name="userContent">
+                    <a href="">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </a>                    
+            </form>    
+            
+            <% for (let work of locals.todo_list) { %>
+
+                <% if(work._id == locals.idToBeUpdated){ %>    
+                    <form action="/edit/<%= work._id %>" method="post" class="tasks-container">
+
+                        <input type="text" name="userContent">
+                        <button type="submit" id="submitbtn"> Confirm </button>
+                        <div id="cancelbtn">
+                            <a href="/"> 
+                                Cancel  
+                           </a>
+                        </div>
+
+                    </form>
+                <% }else{ %>
+                    <div class="tasks-container">
+                        <div class="taskintasks-container">
+                            <span> <%= work.task %> </span>
+                        </div>
+                        
+                        <div>
+                            <a href="/edit/<%= work._id %>"> 
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>  
+                            <a href="/removeTask/<%= work._id %>"> <!-- Sending the id of the element to be deleted -->
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
+                        </div>
+                        
+                    </div>
+               <% } %>
+            <% } %>
+
+        </div>
+
+    </div>
+
+
+    
+</body>
+</html>

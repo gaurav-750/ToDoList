@@ -1,0 +1,51 @@
+<%- include("header.ejs") -%>
+        <div class="todaysDate">
+            <%= todaysDate %>
+        </div>
+        
+        <div class="todo-container">
+            <h2 id="heading">ToDo List</h2>
+    
+            <div class="todo">
+    
+                <form action="/addTask" method="post" id="form-div">    
+                    <input type="text" name="userContent" placeholder="New Item" autocomplete="off">
+                    <a href="">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </a>
+                </form>  
+                
+                <% for (let work of locals.todo_list) { %>
+    
+                    <!-- <div class="Container"> -->
+    
+                        <div class="tasks-container">
+                            <div class="taskintasks-container">
+                                <span> <%= work.task %> </span>
+                            </div>
+                            
+                            <div>
+                                <a href="/edit/<%= work._id %>"> 
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>  
+                                <a href="/removeTask/<%= work._id %>"> <!-- Sending the id of the element to be deleted -->
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </div>
+                        </div>
+    
+                        <!-- <div class="dateInTasks">
+                            <span> May 2, 2019 </span>
+                        </div>  -->
+                        
+                    <!-- </div> -->
+                <% } %>
+    
+            </div>
+
+        </div>
+
+        
+
+</body>
+</html>

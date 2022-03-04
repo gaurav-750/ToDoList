@@ -1,0 +1,154 @@
+body{
+    /* background-image: linear-gradient(to right, #e27442 50%, white 50%); */
+    background-image: linear-gradient(to right,#D1D1D1, white);
+    /* background-image: -webkit-linear-gradient(65deg, blue 50%, yellow 50%); */
+}
+
+.todaysDate{
+    border: 1px solid red;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    left: 37%;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    font-family: 'Candal', sans-serif;
+    padding: .7rem;
+    background-color: #e27442;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.todo-container{
+    /* background: rgba(255, 255, 255, 0.1);; */
+    background-image: linear-gradient(to bottom right, #e27442 50%, white 50%);
+    width: 45%;
+    position: absolute;
+    left: 27%;
+    top: 25%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 7px; */
+}
+
+#heading{
+    font-family: 'Candal', sans-serif;
+    /* font-family: 'helvetica neue'; */
+    font-size: 2rem;
+    color: white;
+}
+
+.todo{
+    /* border: 1px solid blue; */
+    width: 70%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+#form-div{
+    /* border: 1px solid yellow; */
+    position: relative;
+    margin-bottom: 15px;
+}
+
+
+
+#form-div input{
+    /* margin-top: 0; */
+    font-size: 1.4rem;
+    display: inline-block;
+    width: 88%;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Candal', sans-serif;
+    padding: 4px;
+    text-align: center;
+    background-color: rgb(240, 238, 238);
+}
+
+.dateInput-div{
+    /* border: 1px solid yellow; */
+    width: 35%;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px 0 15px 0;
+}
+
+.dateInput-div label{
+    font-family: 'Candal', sans-serif;
+    font-size: 13px;
+    color: red;
+    margin-left: .4rem;
+}
+
+.dateInput-div input{
+    border: none;
+    font-size: 13px !important;
+    font-family:Arial, Helvetica, sans-serif !important;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 15px;
+    color: rgb(163, 158, 158);
+    padding: 5px;
+}
+
+.fa-circle-plus{
+    font-size: 2.1rem;
+    /* color: green; */
+    color: rgb(51, 212, 100);
+    margin-left: 1px;
+    cursor: pointer;
+}
+
+.fa-pen-to-square{
+    font-size: 1.3rem;
+    color: rgb(13, 163, 13);
+    margin-right: 3px;
+}
+
+.fa-xmark{
+    font-size: 1.4rem;
+    color: rgb(223, 43, 43);
+}
+
+a{
+    text-decoration: none;
+}
+
+.Container{
+    /* border: 1px solid brown; */
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.tasks-container{
+    /* border: 1px solid yellowgreen; */
+    color: whitesmoke;
+    margin: 5px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    font-family: 'Candal', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.taskintasks-container{
+    /* border: 1px solid yellow; */
+    flex-grow: 2;
+}
+
+.dateInTasks{
+    margin-left: 10px;
+    color: #D1D1D1;
+    font-size: 13px;
+    /* padding: 5px 0; */
+}
