@@ -21,6 +21,21 @@ body{
     border-radius: 10px;
 }
 
+.weather-div{
+    border: 1px solid red;
+    height: 65px;
+    width: 25%;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: cursive;
+    background-color: #e27442;
+    color: white;
+    position: fixed;
+}
+
 .todo-container{
     /* background: rgba(255, 255, 255, 0.1);; */
     background-image: linear-gradient(to bottom right, #e27442 50%, white 50%);

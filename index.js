@@ -1,6 +1,8 @@
 //Requiring express module(package):
 const express = require('express');
 
+const https = require('https');
+
 //Including the file:
 const db = require('./config/mongoose');
 
@@ -37,19 +39,42 @@ app.get('/', function(req, res){
 
     var today = date.getDate();
     // console.log(today);
+
     //to fetch all the documents in our collection:
     toDo.find({}, function(err, tasks){
-        if (err) {
-            console.log('Error in fetching documents from Db!');
-            return;
-        }
 
-        //rendering to our home page:
-        return res.render('home', {
-            todo_list: tasks,
-            todaysDate: today
-        });
+    //Getting the current temperature through API:
+    let url = 'https://api.openweathermap.org/data/2.5/weather?q=Pune&appid=8e631d91d3ccd39627b7a9f851e0f6da&units=metric'
+
+    var temp;
+    https.get(url, function(response){
+
+        response.on('data', function(data){
+            // console.log(data); -> data is in the form of hexadecimal
+            //converting it into JSON:
+            let weatherData = JSON.parse(data);
+
+            temp = weatherData.main.temp;
+            var status = weatherData.weather[0].description;
+            // console.log(temp);
+
+            if (err) {
+                console.log('Error in fetching documents from Db!');
+                return;
+            }
+
+            //rendering to our home page:
+            return res.render('home', {
+                todo_list: tasks,
+                todaysDate: today,
+                current_Temp: temp,
+                current_Status: status
+            });
+        })
+
     })
+        
+})
 
 })
 
